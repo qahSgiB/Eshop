@@ -4,6 +4,7 @@ from django.urls import reverse
 
 from .other.a import navigationBar, createContext
 from .other.NameSyntax import NameSyntaxSimple
+from .other.UserInputType import basicUserInputTypes
 
 from .models import Product
 
@@ -63,5 +64,45 @@ def product(request, name, style=None):
 
     imageText = ' '.join(['{name} {style}'.format(name=name, style=style) for i in range(10)])
 
-    context = createContext(title=name, name=name, style=style, imagesUrl=imagesUrl, price=price, otherStyles=otherStyles, imageText=imageText)
+    context = createContext(
+        title=name,
+        name=name,
+        style=style,
+        imagesUrl=imagesUrl,
+        price=price,
+        otherStyles=otherStyles,
+        imageText=imageText,
+        url={
+            'name': NameSyntaxSimple.su(name),
+            'style': NameSyntaxSimple.su(style),
+        }
+    )
     return render(request, 'shop/product.html', context)
+
+def buy(request, name, style):
+    name = NameSyntaxSimple.us(name)
+    style = NameSyntaxSimple.us(style)
+
+    productX = Product.objects.get(name=name).productx_set.get(style=style)
+    imageUrl = productX.image.url
+    price = productX.price
+    buyerDatas = [
+        basicUserInputTypes['name'],
+        basicUserInputTypes['email'],
+        basicUserInputTypes['addressSK'],
+        basicUserInputTypes['zipSK'],
+    ]
+
+    context = createContext(
+        title='Buy',
+        name=name,
+        style=style,
+        imageUrl=imageUrl,
+        price=price,
+        buyerDatas=buyerDatas,
+        url={
+            'name': NameSyntaxSimple.su(name),
+            'style': NameSyntaxSimple.su(style),
+        }
+    )
+    return render(request, 'shop/buy.html', context)

@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+    <div class="buy-product-detail">
+        <img class="buy-product-detail-image" src="{{ imageUrl }}" alt="Loading">
+        <div class="buy-product-detail-info-box">
+            <div class="buy-product-detail-info">
+                <p class="buy-product-detail-info">{{ name }}</p>
+                <p class="buy-product-detail-info">{{ style }}</p>
+                <p class="buy-product-detail-info">{{ price }} &euro;</p>
+            </div>
+
+            <div class="buy-product-detail-special">
+                <a class="buy-product-detail-special" href="{% url 'shop:product' name=url.name style=url.style %}">View item &#10097;</a>
+            </div>
+        </div>
+    </div>
+    <div class="buy-detail">
+        <form class="buy-detail" action="{% url 'shop:main' %}" method="post">
+            {% csrf_token %}
+            {% for buyerData in buyerDatas %}
+                <div class="buy-detail-input">
+                    <p class="buy-detail-input">&middot; {{ buyerData.displayName }} &middot;</p>
+                    <input class="buy-detail-input" type="{{ buyerData.type }}" name="{{ buyerData.name }}">
+                </div>
+            {% endfor %}
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
