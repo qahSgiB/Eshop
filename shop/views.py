@@ -66,12 +66,3 @@ def product(request, name, style=None):
 
     context = createContext(title=name, name=name, style=style, imagesUrl=imagesUrl, price=price, otherStyles=otherStyles, imageText=imageText)
     return render(request, 'shop/product.html', context)
-
-def userLogin(request):
-    context = createContext(title='Login', inputs=[basicUserInputTypes['email'], basicUserInputTypes['password']])
-    return render(request, 'shop/userLogin.html', context)
-    # hello
-
-def userLog(request):
-    debug = '{password}'.format(password=request.POST['password'])
-    return HttpResponseRedirect(reverse('shop:main', args=(debug,)))
