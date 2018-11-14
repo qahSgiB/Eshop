@@ -75,3 +75,5 @@ def userLogin(request):
 def userLog(request):
     debug = '{password}'.format(password=request.POST['password'])
     return HttpResponseRedirect(reverse('shop:main', args=(debug,)))
+
+# juj
