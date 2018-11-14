@@ -49,5 +49,5 @@ def createContext(**params):
 navigationBar = NavigationBar()
 navigationBar.addItem('main', 'main')
 navigationBar.addItem('catalog', 'catalog')
-navigationBar.addItem('shopping', 'catalog')
-navigationBar.addItem('login', 'userLogin')
+navigationBar.addItem('about', 'catalog')
+navigationBar.addItem('contact', 'catalog')
