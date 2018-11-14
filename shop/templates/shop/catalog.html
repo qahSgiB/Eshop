@@ -1,0 +1,16 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+    <div class="catalog">
+        {% for product in products %}
+            <a class="product" href="{% url 'shop:product' name=product.url.name style=product.url.style %}">
+                <div class="product">
+                    <img class="product" src="{{ product.imageUrl }}" alt="Loading"/>
+                    <p class="product-name">{{ product.name }}</p>
+                    <p class="product-style">({{ product.style }})</p>
+                    <p class="product-price">{{ product.price }} &euro;</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

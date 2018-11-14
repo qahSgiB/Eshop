@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rakkas">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" />
+        <link rel="stylesheet" type="text/css" href="{% static 'shop/style.css' %}" />
+
+        <title>{% if title %} {{title}} {% else %} Fiii {% endif %}</title>
+    </head>
+
+    <body>
+        <div class="page">
+            <!-- Navigation bar -->
+            <div class="page-element nav-bar">
+                <ul class="nav-bar">
+                    {% for item in navigationBar %}
+                        <li class="nav-bar">
+                            <a class="nav-bar" href="{% url 'shop:'|add:item.viewName %} ">
+                                <p class="nav-bar">{{ item.text }}</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="page-element content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+    <div class="product-detail">
+        <div class="product-detail-image">
+            <img class="product-detail-image" src="{{ imagesUrl.0 }}" alt="loading"/>
+            <div class="product-detail-image-text">
+                <p class="product-detail-image-text">{{ imageText }}</p>
+                <p class="product-detail-image-text">{{ imageText }}</p>
+                <p class="product-detail-image-text">{{ imageText }}</p>
+            </div>
+        </div>
+        <div class="product-detail-info">
+            <p class="product-detail-info product-detail-info-name">&middot;{{ name }}&middot;</p>
+            <p class="product-detail-info product-detail-info-style">&middot;{{ style }}&middot;</p>
+            <div class="product-detail-info-style-selection">
+                {% for otherStyle in otherStyles %}
+                    <a class="product-detail-info-style-selection" href="{% url 'shop:product' name=otherStyle.url.name style=otherStyle.url.style %}">
+                        {% if otherStyle.name == style %}
+                            <p class="product-detail-info-style-selection product-detail-info-style-selection-selected">{{ otherStyle.name }}</p>
+                        {% else %}
+                            <p class="product-detail-info-style-selection">{{ otherStyle.name }}</p>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+            <p class="product-detail-info product-detail-info-price">&middot;{{ price }} &euro;&middot;</p>
+        </div>
+    </div>
+{% endblock %}
