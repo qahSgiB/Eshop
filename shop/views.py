@@ -4,7 +4,6 @@ from django.urls import reverse
 
 from .other.a import navigationBar, createContext
 from .other.NameSyntax import NameSyntaxSimple
-from .other.UserInputType import basicUserInputTypes
 
 from .models import Product
 
