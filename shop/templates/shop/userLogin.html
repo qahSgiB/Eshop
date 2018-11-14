@@ -1,0 +1,16 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+    <div class="login">
+        <form class="login-input" action="{% url 'shop:userLog' %}" method="post">
+            {% csrf_token %}
+            {% for input in inputs %}
+                <div class="login-input">
+                    <p class="login-input">{{ input.displayName }}</p>
+                    <input class="login-input" type="{{ input.type }}" name="{{ input.name }}" value="">
+                </div>
+            {% endfor %}
+            <input type="submit" name="submit" value="Log in">
+        </form>
+    </div>
+{% endblock %}

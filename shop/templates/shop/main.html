@@ -12,7 +12,12 @@
 
         <div class="content-part">
             <p class="content-part title">* New products *<br /></p>
-            <p class="content-part text">Check out new products here</p>
+            <p class="content-part text">Check out new products <a class="content-part" href="{% url 'shop:catalog' %}">HERE</a></p>
+        </div>
+
+        <div class="content-part">
+            <p class="content-part title">* Debug *<br /></p>
+            <p class="content-part text">{{ debug }}</p>
         </div>
 
         <p class="test">Test</p>

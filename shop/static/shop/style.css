@@ -186,6 +186,20 @@ p.content-part.text {
     font-size: 20px;
 }
 
+a.content-part {
+    margin: 0px;
+    padding: 0px;
+
+    text-align: center;
+
+    text-decoration: underline;
+
+    color: FFD788;
+
+    font-family: "Playfair Display";
+    font-size: 20px;
+}
+
 p.test {
     margin-top: 1000px;
 }
@@ -202,19 +216,16 @@ a.product {
     float: left;
 
     margin-bottom: 50px;
-    margin-left: 2.77%;
-    margin-right: 2.77%;
+    margin-left: 4%;
+    margin-right: 4%;
 
-    width: 27.77%;
+    width: 25.33%;
 
     text-decoration: none;
 }
 
 div.product {
-    padding-left: 8.33%;
-    padding-right: 8.33%;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 10%;
 
     width: 100%;
 }
@@ -409,4 +420,79 @@ p.product-detail-info-style-selection {
 p.product-detail-info-style-selection-selected {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
+}
+
+a.product-detail-info {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+
+    font-family: "Space mono";
+}
+
+a.product-detail-info-buy {
+    margin-top: 4%;
+
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255, 0.5);
+
+    font-family: "Rakkas";
+    font-size: 3.15vw;
+}
+
+a.product-detail-info-buy:hover {
+    border-color: rgb(255, 255, 255);
+
+    background-color: rgb(255, 255, 255);
+}
+
+/* ------------------- userLogin.html ------------------- */
+
+div.login {
+    display: flex;
+
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 25px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form.login-input {
+    display: flex;
+    
+    width: 50%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.login-input {
+    display: flex;
+
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.login-input {
+    /* width: 100%; */
 }

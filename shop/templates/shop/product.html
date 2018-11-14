@@ -25,6 +25,7 @@
                 {% endfor %}
             </div>
             <p class="product-detail-info product-detail-info-price">&middot;{{ price }} &euro;&middot;</p>
+            <a class="product-detail-info product-detail-info-buy " href="{% url 'shop:main' %}">Buy</a>
         </div>
     </div>
 {% endblock %}
