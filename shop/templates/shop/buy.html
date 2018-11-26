@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="buy-detail">
-        <form class="buy-detail" action="{% url 'shop:main' %}" method="post">
+        <form class="buy-detail" action="{% url 'shop:main' %}" method="post" autocomplete="off">
             {% csrf_token %}
             {% for buyerData in buyerDatas %}
                 <div class="buy-detail-input">
@@ -24,7 +24,7 @@
                     <input class="buy-detail-input" type="{{ buyerData.type }}" name="{{ buyerData.name }}">
                 </div>
             {% endfor %}
-            <input type="submit" name="submit" value="Submit">
+            <input class="buy-detail-submit" type="submit" name="submit" value="Submit">
         </form>
     </div>
 {% endblock %}
