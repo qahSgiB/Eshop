@@ -16,3 +16,7 @@ class ProductX(models.Model):
 class ProductXDetailImage(models.Model):
     image = models.ImageField(upload_to='shop/images')
     productX = models.ForeignKey(ProductX, on_delete=models.CASCADE)
+
+class MainInfo(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length=1000)

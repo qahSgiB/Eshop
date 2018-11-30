@@ -31,14 +31,15 @@ div.page-element {
     width: 100%;
 }
 
-div.page-element.nav-bar {
+div.page-element-nav-bar {
     margin-top: 50px;
+    margin-bottom: 50px;
 
     flex-shrink: 0;
 }
 
-div.page-element.content {
-    margin-top: 100px;
+div.page-element-content {
+    /* margin-top: 100px; */
 
     overflow-y: auto;
 }
@@ -151,19 +152,19 @@ p.content-part {
 
     text-align: center;
 
-    color: FFD788;
+    color: rgb(0, 0, 0);
 
-    font-family: "Playfair Display";
+    font-family: "Space mono";
     font-size: 20px;
 }
 
 p.content-part.welcome {
     display: inline;
 
-    font-size: 35px;
+    font-size: 30px;
 
-    text-decoration: underline;
-    text-decoration-style: wavy;
+    text-decoration: overline underline;
+    text-decoration-style: dashed;
 }
 
 p.content-part.welcome-fiii {
@@ -179,11 +180,11 @@ p.content-part.welcome-fiii {
 p.content-part.title {
     margin-bottom: 10px;
 
-    font-size: 30px;
+    font-size: 25px;
 }
 
 p.content-part.text {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 a.content-part {
@@ -194,10 +195,10 @@ a.content-part {
 
     text-decoration: underline;
 
-    color: FFD788;
+    color: rgb(0, 0, 0);
 
-    font-family: "Playfair Display";
-    font-size: 20px;
+    font-family: "Space mono";
+    font-size: 15px;
 }
 
 p.test {
@@ -225,6 +226,11 @@ a.product {
 }
 
 div.product {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
     padding: 10%;
 
     width: 100%;
@@ -240,13 +246,20 @@ img.product {
 }
 
 p.product-name {
-    margin: 0px;
-    padding: 0px;
+    margin-bottom: 0px;
     margin-top: 15px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    width: 100%;
 
     text-align: center;
 
-    color: FFD788;
+    /* color: FFD788; */
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0); */
 
     font-family: "Rakkas";
     font-size: 20px;
@@ -254,15 +267,17 @@ p.product-name {
 
 p.product-style {
     margin: 0px;
-    padding: 0px;
-    margin-top: 1px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0.4em;
 
     text-align: center;
 
-    color: FFD788;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 
-    font-family: "Rakkas";
-    font-size: 13;
+    font-family: "Space mono";
+    font-size: 10;
 }
 
 p.product-price {
@@ -275,7 +290,7 @@ p.product-price {
     color: rgb(0, 0, 0);
 
     font-family: "Rakkas";
-    font-size: 17px;
+    font-size: 22px;
 }
 
 /* ------------------- product.html ------------------- */
@@ -608,7 +623,7 @@ p.buy-detail-input {
     /* background-color: rgb(0, 0, 0); */
 
     font-family: "Rakkas";
-    font-size: 30px;
+    font-size: 23px;
 }
 
 input.buy-detail-input {
@@ -628,10 +643,10 @@ input.buy-detail-input {
     outline: none;
 
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.1);
 
     font-family: "Space mono";
-    font-size: 22px;
+    font-size: 15px;
 }
 
 input.buy-detail-input:hover {
@@ -656,27 +671,28 @@ input.buy-detail-input:-webkit-autofill:focus {
 }
 
 input.buy-detail-submit {
-    width: 25%;
+    /* width: 25%; */
 
-    margin: 0;
     margin-top: 3vw;
     margin-bottom: 1vw;
+    padding-top: 0.4vw;
+    padding-bottom: 0.4vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
 
-    border-width: 0.1em;
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
+    border: none;
 
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255);
 
-    font-family: "Rakkas";
-    font-size: 3.15vw;
+    font-family: "Space mono";
+    font-size: 2.5vw;
 }
 
 input.buy-detail-submit:hover {
     cursor: pointer;
 
-    border-color: rgb(255, 255, 255);
-
-    background-color: rgb(255, 255, 255);
+    text-decoration: underline;
 }
+
+/* ------------------- pay.html ------------------- */

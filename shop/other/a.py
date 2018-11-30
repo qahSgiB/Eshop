@@ -28,6 +28,12 @@ class ProductManager:
             productXDetailImage = ProductXDetailImage(productX=productX)
             productXDetailImage.image.save('{name}/{style}/details/{index}.jpg'.format(name=productNameSU, style=styleSU, index=i), image)
 
+class MainInfoManager:
+    def createMainInfo(title, text):
+        from shop.models import MainInfo
+
+        MainInfo.objects.create(title=title, text=text)
+
 
 
 def createContext(**params):

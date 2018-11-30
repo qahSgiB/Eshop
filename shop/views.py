@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.template import Context, Template
 
 from .other.a import navigationBar, createContext
 from .other.NameSyntax import NameSyntaxSimple
 from .other.UserInputType import basicUserInputTypes
 
-from .models import Product
+from .models import Product, MainInfo
 
 
 
@@ -14,7 +15,13 @@ def index(request):
     return HttpResponseRedirect(reverse('shop:main'))
 
 def main(request, debug='Debug'):
-    context = createContext(debug=debug)
+    mainInfos = []
+    for mainInfo in MainInfo.objects.all():
+        title = Template(mainInfo.title).render(Context({'debug': debug}))
+        text = Template(mainInfo.text).render(Context({'debug': debug}))
+        mainInfos.append({'title': title, 'text': text})
+
+    context = createContext(debug=debug, mainInfos=mainInfos)
     return render(request, 'shop/main.html', context)
 
 def catalog(request):

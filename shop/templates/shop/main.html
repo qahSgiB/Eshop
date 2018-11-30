@@ -10,15 +10,12 @@
             </div>
         </div>
 
-        <div class="content-part">
-            <p class="content-part title">* New products *<br /></p>
-            <p class="content-part text">Check out new products <a class="content-part" href="{% url 'shop:catalog' %}">HERE</a></p>
-        </div>
-
-        <div class="content-part">
-            <p class="content-part title">* Debug *<br /></p>
-            <p class="content-part text">{{ debug }}</p>
-        </div>
+        {% for mainInfo in mainInfos %}
+            <div class="content-part">
+                <p class="content-part title">[ {{ mainInfo.title | safe }} ]<br /></p>
+                <p class="content-part text">{{ mainInfo.text | safe }}</p>
+            </div>
+        {% endfor %}
 
         <p class="test">Test</p>
     </div>

@@ -17,9 +17,9 @@
                 {% for otherStyle in otherStyles %}
                     <a class="product-detail-info-style-selection" href="{% url 'shop:product' name=otherStyle.url.name style=otherStyle.url.style %}">
                         {% if otherStyle.name == style %}
-                            <p class="product-detail-info-style-selection product-detail-info-style-selection-selected">{{ otherStyle.name }}</p>
+                            <p class="product-detail-info-style-selection product-detail-info-style-selection-selected">[ {{ otherStyle.name }} ]</p>
                         {% else %}
-                            <p class="product-detail-info-style-selection">{{ otherStyle.name }}</p>
+                            <p class="product-detail-info-style-selection">[ {{ otherStyle.name }} ]</p>
                         {% endif %}
                     </a>
                 {% endfor %}
