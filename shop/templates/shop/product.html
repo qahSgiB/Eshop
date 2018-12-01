@@ -2,15 +2,25 @@
 
 {% block content %}
     <div class="product-detail">
-        <div class="product-detail-image">
-            <div class="product-detail-image-slideshow" id="imageSlideshow">
-                {% for imageUrl in imagesUrl %}
-                    {% if forloop.first %}
-                        <img class="product-detail-image" id="slideShowImage" src="{{ imageUrl }}" alt="loading"/>
-                    {% else %}
-                        <img class="product-detail-image product-detail-image-hidden" id="slideShowImage" src="{{ imageUrl }}" alt="loading"/>
-                    {% endif %}
-                {% endfor %}
+        <div class="product-detail-image-container">
+            <div class="product-detail-image">
+                <div class="product-detail-image-slideshow" id="imageSlideshow">
+                    {% for imageUrl in imagesUrl %}
+                        {% if forloop.first %}
+                            <img class="product-detail-image" src="{{ imageUrl }}" alt="loading"/>
+                        {% else %}
+                            <img class="product-detail-image product-detail-image-hidden" src="{{ imageUrl }}" alt="loading"/>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="product-detail-image-selection" id="imageSlection">
+                    {% for i in imageCount %}
+                    <label class="product-detail-image-selection">
+                        <input class="product-detail-image-selection" type="radio" name="imageSelector"></button>
+                        <span class="product-detail-image-selection"></span>
+                    </label>
+                    {% endfor %}
+                </div>
             </div>
             <div class="product-detail-image-text">
                 <p class="product-detail-image-text">{{ imageText }}</p>

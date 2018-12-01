@@ -83,6 +83,7 @@ def product(request, name, style=None):
         price=price,
         otherStyles=otherStyles,
         imageText=imageText,
+        imageCount=range(len(imagesUrl)),
         url={
             'name': NameSyntaxSimple.su(name),
             'style': NameSyntaxSimple.su(style),
