@@ -3,7 +3,15 @@
 {% block content %}
     <div class="product-detail">
         <div class="product-detail-image">
-            <img class="product-detail-image" src="{{ imagesUrl.0 }}" alt="loading"/>
+            <div class="product-detail-image-slideshow" id="imageSlideshow">
+                {% for imageUrl in imagesUrl %}
+                    {% if forloop.first %}
+                        <img class="product-detail-image" id="slideShowImage" src="{{ imageUrl }}" alt="loading"/>
+                    {% else %}
+                        <img class="product-detail-image product-detail-image-hidden" id="slideShowImage" src="{{ imageUrl }}" alt="loading"/>
+                    {% endif %}
+                {% endfor %}
+            </div>
             <div class="product-detail-image-text">
                 <p class="product-detail-image-text">{{ imageText }}</p>
                 <p class="product-detail-image-text">{{ imageText }}</p>
@@ -28,4 +36,7 @@
             <a class="product-detail-info product-detail-info-buy " href="{% url 'shop:buy' name=url.name style=url.style %}">Buy</a>
         </div>
     </div>
+
+    {% load static %}
+    <script src="{% static 'shop/slideShow.js' %}"></script>
 {% endblock %}

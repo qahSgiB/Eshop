@@ -14,7 +14,11 @@ from .models import Product, MainInfo
 def index(request):
     return HttpResponseRedirect(reverse('shop:main'))
 
-def main(request, debug='Debug'):
+def main(request):
+    ignorePostDataKeys = ['csrfmiddlewaretoken', 'submit']
+    postDataTexts = ['{key}: {value}'.format(key=postDataKey, value=request.POST[postDataKey]) for postDataKey in list(request.POST.keys()) if not postDataKey in ignorePostDataKeys]
+    debug = '<br>'.join(postDataTexts) if len(postDataTexts) > 0 else 'Nothing to show :('
+
     mainInfos = []
     for mainInfo in MainInfo.objects.all():
         title = Template(mainInfo.title).render(Context({'debug': debug}))

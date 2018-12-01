@@ -318,13 +318,20 @@ div.product-detail-image {
     flex-basis: 1px;
 }
 
+div.product-detail-image-slideshow {
+    width: 100%;
+}
+
 img.product-detail-image {
     width: 150%;
-    height: auto;
 
     margin: 0%;
 
     object-fit: cover;
+}
+
+img.product-detail-image-hidden {
+    display: none
 }
 
 div.product-detail-image-text {
