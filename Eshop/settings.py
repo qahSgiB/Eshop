@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'Eshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DjangoEshop',
-        'USER': 'postgres',
-        'PASSWORD': 'Mansnotwarm67',
-        'HOST': 'localhost',
+        'NAME': 'sdodlfio',
+        'USER': 'sdodlfio',
+        'PASSWORD': 'enmUasCDIgLOA4yvLbMjTl_2PepOIKk0',
+        'HOST': 'manny.db.elephantsql.com',
         'PORT': '5432',
     }
 }

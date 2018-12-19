@@ -116,3 +116,6 @@ dmypy.json
 
 # Other shit
 *.pyc
+
+# django deployment with google cloud shit
+app.yaml
